@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* =========================
+   BASE BODY STYLING (WIX)
+========================= */
+body {
+  @apply bg-[#FAF7F2] text-[#5F6F7A] antialiased font-sans;
+}
+
+h1, h2, h3, h4 {
+  color: #1E5E7E;
+  font-weight: 600;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+.section-dark {
+  /* renamed visually: light academic section */
+  @apply relative overflow-hidden bg-[#FAF7F2];
+}
+
+.section-light {
+  @apply bg-white;
+}
+
+/* =========================
+   BACKGROUND EFFECTS (SUBTLE)
+========================= */
+.bg-glow {
+  @apply absolute rounded-full blur-3xl opacity-10;
+  background: #3A7CA5;
+}
+
+/* =========================
+   MOBILE POLISH
+========================= */
+@media (max-width: 640px) {
+  h1, h2 {
+    line-height: 1.25;
+  }
+
+  section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  button, a {
+    touch-action: manipulation;
+  }
+}
+
+/* =========================
+   FOCUS & ACCESSIBILITY
+========================= */
+a:focus,
+button:focus {
+  outline: 2px solid #F28C28;
+  outline-offset: 2px;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* =========================
+   MATH THEME (CLEAN VERSION)
+========================= */
+
+/* Subtle math grid */
+.math-grid {
+  background-image:
+    linear-gradient(to right, rgba(30,94,126,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(30,94,126,0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Floating math symbols */
+@keyframes mathFloat {
+  0% { transform: translateY(0); opacity: 0.25; }
+  50% { transform: translateY(-12px); opacity: 0.45; }
+  100% { transform: translateY(0); opacity: 0.25; }
+}
+
+.math-symbol {
+  position: absolute;
+  color: rgba(242, 140, 40, 0.35); /* Wix orange */
+  animation: mathFloat 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* =========================
+   SECTION REVEAL ANIMATION
+========================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   BUTTON POLISH (WIX STYLE)
+========================= */
+.btn-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(242,140,40,0.35);
+}
+
+/* =========================
+   WHATSAPP MOBILE FIX
+========================= */
+@media (max-width: 768px) {
+  .mobile-safe-bottom {
+    padding-bottom: 90px;
+  }
+}
+
+/* =========================
+   HORIZONTAL REVIEWS
+========================= */
+.review-scroll {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+.review-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.review-card {
+  min-width: 300px;
+  scroll-snap-align: start;
+  background: white;
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 0.9s ease forwards;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(-14px); opacity: 0.7; }
+  100% { transform: translateY(0); opacity: 0.4; }
+}
+
+.animate-float {
+  animation: float 7s ease-in-out infinite;
+}
