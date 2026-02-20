@@ -2,7 +2,7 @@ import { MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-gray-200 bg-[#faf9f6] py-12 px-4">
+    <footer className="border-t border-gray-100 bg-[#faf9f6] py-12 px-4">
       <div className="max-w-7xl mx-auto text-center space-y-6">
 
         {/* Brand */}

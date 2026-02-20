@@ -33,10 +33,10 @@ function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white math-grid">
+    <div className="min-h-screen bg-[#faf9f6] text-[#1f3a5f]">
       <Navbar />
 
-      <main className="pt-20 mobile-safe-bottom">
+      <main className="pt-16 md:pt-20 mobile-safe-bottom">
         <div className="reveal">
           <Hero />
         </div>
