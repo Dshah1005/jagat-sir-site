@@ -7,9 +7,12 @@ import Faculty from "./components/Faculty";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
-import { useEffect } from "react";
+import OptIn from "./components/OptIn";
 
-function App() {
+import { useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+function Home() {
   useEffect(() => {
     const elements = document.querySelectorAll(".reveal");
 
@@ -62,6 +65,22 @@ function App() {
       <Footer />
       <WhatsAppButton />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+
+        {/* Home */}
+        <Route path="/" element={<Home />} />
+
+        {/* Opt-In Page */}
+        <Route path="/opt-in" element={<OptIn />} />
+
+      </Routes>
+    </BrowserRouter>
   );
 }
 

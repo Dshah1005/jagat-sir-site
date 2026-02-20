@@ -48,14 +48,27 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Call Button */}
-        <a
-          href="tel:8097991007"
-          className="flex items-center gap-2 bg-[#f59e0b] text-white px-5 py-2.5 rounded-full font-semibold shadow-md hover:bg-[#e58e06] hover:shadow-lg transition"
-        >
-          <Phone size={15} />
-          Call Now
-        </a>
+        {/* Right Side Buttons */}
+        <div className="flex items-center gap-4">
+          
+          {/* Opt-In Button */}
+          <a
+            href="/opt-in"
+            className="hidden md:flex items-center gap-2 border border-[#f59e0b] text-[#f59e0b] px-5 py-2.5 rounded-full font-semibold hover:bg-[#f59e0b] hover:text-white transition"
+          >
+            Opt-In
+          </a>
+
+          {/* Call Button */}
+          <a
+            href="tel:8097991007"
+            className="flex items-center gap-2 bg-[#f59e0b] text-white px-5 py-2.5 rounded-full font-semibold shadow-md hover:bg-[#e58e06] hover:shadow-lg transition"
+          >
+            <Phone size={15} />
+            Call Now
+          </a>
+
+        </div>
       </div>
     </nav>
   );

@@ -20,6 +20,29 @@ const Footer = () => {
           </p>
         </div>
 
+        {/* Links */}
+        <div className="flex justify-center gap-6 text-sm">
+          
+
+          <a
+            href="https://www.k3digitalmedia.com/terms-and-conditions"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#4b6b88] hover:text-[#f59e0b]"
+          >
+            Terms & Conditions
+          </a>
+
+          <a
+            href="https://www.k3digitalmedia.com/privacy-policy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#4b6b88] hover:text-[#f59e0b]"
+          >
+            Privacy Policy
+          </a>
+        </div>
+
         {/* Divider */}
         <div className="h-px bg-gray-200 max-w-sm mx-auto" />
 
