@@ -9,6 +9,9 @@ import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
 import OptIn from "./components/OptIn";
 
+import Terms from "./components/Terms";     // ✅ FIXED PATH
+import Privacy from "./components/Privacy"; // ✅ FIXED PATH
+
 import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -76,8 +79,14 @@ function App() {
         {/* Home */}
         <Route path="/" element={<Home />} />
 
-        {/* Opt-In Page */}
+        {/* Opt-In */}
         <Route path="/opt-in" element={<OptIn />} />
+
+        {/* Terms */}
+        <Route path="/terms" element={<Terms />} />
+
+        {/* Privacy */}
+        <Route path="/privacy" element={<Privacy />} />
 
       </Routes>
     </BrowserRouter>
