@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const OptIn = () => {
   const navigate = useNavigate();
@@ -7,7 +7,7 @@ const OptIn = () => {
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
-    company: "",
+    studentName: "",   // ✅ changed
     mobile: "",
     consent: true,
   });
@@ -34,7 +34,6 @@ const OptIn = () => {
 
     setLoading(true);
 
-    // Simulate real API delay
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
     console.log(form);
@@ -45,7 +44,7 @@ const OptIn = () => {
     setForm({
       firstName: "",
       lastName: "",
-      company: "",
+      studentName: "",  // ✅ reset
       mobile: "",
       consent: true,
     });
@@ -57,7 +56,6 @@ const OptIn = () => {
       {/* Header */}
       <div className="bg-gradient-to-r from-[#1e3a8a] to-[#4f46e5] text-white py-20 text-center relative">
 
-        {/* Back Button */}
         <button
           onClick={() => navigate("/")}
           className="absolute left-6 top-6 bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-lg text-sm backdrop-blur transition"
@@ -74,6 +72,7 @@ const OptIn = () => {
         </p>
       </div>
 
+
       {/* Form */}
       <div className="max-w-5xl mx-auto px-6 py-16">
 
@@ -82,7 +81,6 @@ const OptIn = () => {
           className="bg-white rounded-2xl shadow-md p-10 space-y-6"
         >
 
-          {/* Success Message */}
           {success && (
             <div className="bg-green-100 text-green-700 px-4 py-3 rounded-lg text-sm">
               ✅ Form submitted successfully!
@@ -114,11 +112,13 @@ const OptIn = () => {
 
           {/* Row 2 */}
           <div className="grid md:grid-cols-2 gap-6">
+
+            {/* ✅ Student Name */}
             <input
               type="text"
-              name="company"
-              placeholder="Company Name"
-              value={form.company}
+              name="studentName"
+              placeholder="Student Name"
+              value={form.studentName}
               onChange={handleChange}
               className="w-full border border-gray-200 rounded-xl px-5 py-4 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
@@ -134,26 +134,19 @@ const OptIn = () => {
             />
           </div>
 
+
           {/* Terms */}
           <div className="text-gray-600 text-sm space-y-3 leading-relaxed">
 
             <p>
               By clicking Submit, you agree to our{" "}
-              <a
-                href="https://www.k3digitalmedia.com/terms-and-conditions"
-                target="_blank"
-                className="text-blue-600 font-semibold"
-              >
+              <Link to="/terms" className="text-blue-600 font-semibold">
                 Terms of Services
-              </a>{" "}
+              </Link>{" "}
               and that you have read our{" "}
-              <a
-                href="https://www.k3digitalmedia.com/privacy-policy"
-                target="_blank"
-                className="text-blue-600 font-semibold"
-              >
+              <Link to="/privacy" className="text-blue-600 font-semibold">
                 Privacy Policy
-              </a>
+              </Link>
             </p>
 
             <label className="flex items-start gap-2">
@@ -171,6 +164,7 @@ const OptIn = () => {
             </label>
 
           </div>
+
 
           {/* Submit */}
           <div className="text-center pt-4">
